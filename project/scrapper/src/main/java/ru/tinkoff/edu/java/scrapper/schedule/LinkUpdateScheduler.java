@@ -4,9 +4,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import parser.LinkParser;
-import link.GithubLink;
-import link.ParserLink;
-import link.StackOverFlowLink;
+import Link.GithubLink;
+import Link.ParserLink;
+import Link.StackOverFlowLink;
 import ru.tinkoff.edu.java.scrapper.client.GitHubClient;
 import ru.tinkoff.edu.java.scrapper.client.StackOverflowClient;
 import ru.tinkoff.edu.java.scrapper.model.Link;
@@ -22,7 +22,7 @@ public class LinkUpdateScheduler {
 
 
 
-    public LinkUpdateScheduler(LinkUpdateService linkUpdateService, LinkParser linkParser) {
+    public LinkUpdateScheduler(LinkUpdateService linkUpdateService) {
         this.linkUpdateService = linkUpdateService;
     }
 
