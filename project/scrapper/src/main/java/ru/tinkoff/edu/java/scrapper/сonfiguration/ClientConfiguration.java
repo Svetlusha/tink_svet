@@ -1,4 +1,4 @@
-package ru.tinkoff.edu.java.scrapper.configuration;
+package ru.tinkoff.edu.java.scrapper.сonfiguration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

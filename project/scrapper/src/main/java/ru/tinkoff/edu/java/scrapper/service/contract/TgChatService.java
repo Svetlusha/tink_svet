@@ -1,6 +1,6 @@
-package ru.tinkoff.edu.java.scrapper.service;
+package ru.tinkoff.edu.java.scrapper.service.contract;
 
-import ru.tinkoff.edu.java.scrapper.model.User;
+import ru.tinkoff.edu.java.scrapper.model.commonDto.User;
 
 public interface TgChatService {
 
