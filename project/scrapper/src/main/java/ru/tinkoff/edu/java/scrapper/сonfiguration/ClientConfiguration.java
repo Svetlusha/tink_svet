@@ -1,4 +1,4 @@
-package ru.tinkoff.edu.java.scrapper.сonfiguration;
+package ru.tinkoff.edu.java.scrapper.configuration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -17,10 +17,6 @@ public class ClientConfiguration {
     @Value("${so.baseurl}")
     private String stackOverflowBaseUrl;
 
-    @Value("${bot.baseurl}")
-    private String botBaseUrl;
-
-
     //Регистрируем клиентов как бины
     @Bean
     public GitHubClient gitHubClientService() {
@@ -30,14 +26,6 @@ public class ClientConfiguration {
     @Bean
     public StackOverflowClient stackOverflowClientService() {
         return new StackOverflowClient(stackOverflowBaseUrl);
-    }
-
-    @Bean
-    public BotClient botClient(){return new BotClient(botBaseUrl);}
-
-    @Bean
-    public WebClient botWebClient(){
-        return WebClient.create(botBaseUrl);
     }
 
     @Bean

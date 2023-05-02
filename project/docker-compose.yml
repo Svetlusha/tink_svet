@@ -5,7 +5,7 @@ services:
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_USER=lwbeamer
+      - POSTGRES_USER=svetlusha
       - POSTGRES_PASSWORD=2281337
       - POSTGRES_DB=scrapper
     volumes:
@@ -22,7 +22,7 @@ services:
       - --changelog-file=master.xml
       - --driver=org.postgresql.Driver
       - --url=jdbc:postgresql://postgresql:5432/scrapper
-      - --username=lwbeamer
+      - --username=svetlusha
       - --password=2281337
       - update
     volumes:
@@ -30,8 +30,24 @@ services:
     networks:
       - backend
 
+  rabbit:
+    image: rabbitmq:3-management
+    hostname: rabbitmq
+    container_name: rabbit
+    ports:
+      - 15672:15672
+      - 5672:5672
+    environment:
+      - RABBITMQ_DEFAULT_USER=svetlusha
+      - RABBITMQ_DEFAULT_PASS=2281337
+    volumes:
+      - rabbitmq-state:/var/lib/rabbitmq
+    networks:
+      - backend
+
 volumes:
   link-service-data:
+  rabbitmq-state:
 
 networks:
   backend:
