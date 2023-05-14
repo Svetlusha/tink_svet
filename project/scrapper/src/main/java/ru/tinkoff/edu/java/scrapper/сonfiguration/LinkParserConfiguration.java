@@ -1,4 +1,4 @@
-package ru.tinkoff.edu.java.scrapper.сonfiguration;
+package ru.tinkoff.edu.java.scrapper.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +8,7 @@ import parser.LinkParser;
 public class LinkParserConfiguration {
 
     @Bean
-    public LinkParser linkParser(){
+    public LinkParser linkParser() {
         return new LinkParser();
     }
 }
